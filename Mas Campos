@@ -1,0 +1,33 @@
+_____________________________________________________________________________________
+|_____________________________Ideas para  la base de Datos__________________________|
+-------------------------------------------------------------------------------------
+
+Tabla de tipos de usuario (tipousuario)
+	>tipu_descripcion (TEXT): Breve descripción del rol del usuario.
+	
+Tabla de usuarios (usuario)
+	>usu_username (VARCHAR(30)): Nombre de usuario único. --Como un nametag
+	>usu_password (VARCHAR(255)): Contraseña encriptada.
+	>usu_foto_perfil (VARCHAR(255)): URL de la imagen de perfil. --Uno a Uno
+	>usu_fecha_registro (TIMESTAMP): Fecha y hora del registro.
+	>usu_biografia (TEXT): Breve descripción del usuario.
+	>usu_estado (ENUM): Activo, Inactivo, Suspendido, etc.
+
+Tabla de contenido (contenido)
+	>cont_resumen (TEXT): Breve resumen del contenido.
+	>cont_fecha_creacion (TIMESTAMP): Fecha y hora de publicación.
+	>cont_fecha_actualizacion (TIMESTAMP): Última modificación del contenido.
+	>cont_estado (ENUM): Borrador, Publicado, Archivado, etc.
+	>cont_visitas (INT): Contador de visitas al contenido.
+
+Tabla de categorías (categoria)
+	>cat_descripcion (TEXT): Breve descripción de la categoría.
+	>cat_icono (VARCHAR(255)): URL de un icono representativo. -- De uno a uno
+
+Tabla de comentarios (comentario)
+	>cmt_estado (ENUM): Aprobado, Pendiente, Rechazado, etc.
+	>cmt_responde_a (INT): ID de otro comentario si es una respuesta.
+	>cmt_ip_usuario (VARCHAR(45)): IP desde donde se hizo el comentario.
+
+Tabla de imágenes (imagen)
+	>img_descripcion (TEXT): Texto alternativo o descripción de la imagen
